@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(210, 40%, 20%);
+  --muted: hsl(210, 40%, 98%);
+  --muted-foreground: hsl(215, 16%, 47%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(210, 40%, 20%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(210, 40%, 20%);
+  --border: hsl(214, 32%, 91%);
+  --input: hsl(214, 32%, 91%);
+  --primary: hsl(218, 100%, 17%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(154, 100%, 50%);
+  --secondary-foreground: hsl(218, 100%, 17%);
+  --accent: hsl(210, 40%, 98%);
+  --accent-foreground: hsl(210, 40%, 20%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(218, 100%, 17%);
+  --radius: 0.5rem;
+  
+  /* Custom colors for stock dashboard */
+  --stock-green: hsl(142, 76%, 36%);
+  --stock-red: hsl(0, 76%, 50%);
+  --stock-neutral: hsl(43, 89%, 38%);
+  --chart-1: hsl(12, 76%, 61%);
+  --chart-2: hsl(173, 58%, 39%);
+  --chart-3: hsl(197, 37%, 24%);
+  --chart-4: hsl(43, 74%, 66%);
+  --chart-5: hsl(27, 87%, 67%);
+}
+
+.dark {
+  --background: hsl(222, 84%, 5%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(217, 32%, 17%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --popover: hsl(222, 84%, 5%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(222, 84%, 5%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(217, 32%, 17%);
+  --input: hsl(217, 32%, 17%);
+  --primary: hsl(218, 100%, 17%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(154, 100%, 50%);
+  --secondary-foreground: hsl(218, 100%, 17%);
+  --accent: hsl(217, 32%, 17%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62%, 30%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(212, 72%, 59%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', 'Poppins', system-ui, -apple-system, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .stock-green {
+    color: var(--stock-green);
+  }
+  
+  .stock-red {
+    color: var(--stock-red);
+  }
+  
+  .stock-neutral {
+    color: var(--stock-neutral);
+  }
+  
+  .bg-stock-green {
+    background-color: var(--stock-green);
+  }
+  
+  .bg-stock-red {
+    background-color: var(--stock-red);
+  }
+  
+  .bg-stock-neutral {
+    background-color: var(--stock-neutral);
+  }
+  
+  .verdict-buy {
+    @apply bg-green-50 border-green-500 text-green-700;
+  }
+  
+  .verdict-hold {
+    @apply bg-yellow-50 border-yellow-500 text-yellow-700;
+  }
+  
+  .verdict-avoid {
+    @apply bg-red-50 border-red-500 text-red-700;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
